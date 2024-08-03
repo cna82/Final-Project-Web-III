@@ -114,7 +114,7 @@ const render = (list) => {
   <div class="ctg">
   <h2>Products</h2>
     <div class="btn-group w-100"  role="group">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
       category
     </button>
     <ul class="dropdown-menu">
@@ -127,12 +127,12 @@ const render = (list) => {
   </div>
   <div class="w-100"><hr></div>
   <div class="btn-group w-100"  role="group">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
       Sort By
     </button>
     <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#product-list" onclick="handleSort()">Default ID</a></li>
-    <li><a class="dropdown-item" href="#product-list" onclick="handleSort()">Reverse ID</a></li>
+    <li><a class="dropdown-item" href="#product-list" onclick="handleSort()">Ascending</a></li>
+    <li><a class="dropdown-item" href="#product-list" onclick="handleSort()">Descending</a></li>
     </ul>
   </div>
   <div class="w-100"><hr></div>
@@ -148,15 +148,22 @@ const render = (list) => {
       return `
                 <div class="product">
                     <img src="${item.image}" class="hg" />
-                    <h4>${item.title}</h4>
+                    <h5>${item.title}</h5>
                     <h6> ID:  <span>${item.id}</span></h6>
+                    <details>
+                    <summary>
+                    show description 
+                    </summary>
                     <p class="dsc">${item.description}</p>
+                    </details>
                     <h6>Category:${item.category}</h6>
-                
+                    <sapn class="badge  bg-secondary">${item.price} $</span>
+                    <br/>
+                    </br>
                     ${
                       !YOURLAB.find((yourLabItem) => yourLabItem.id === item.id)
-                        ? `<button class="btn btn-lg btn-green text-light add-item" onclick="handleAddToYourLab('${item.id}'); handleToast('add');">Add to basket</button>`
-                        : `<span class="badge bg-danger selected">This item has already been selected !! </span>`
+                        ? `<button class="btn btn-lg btn-primary text-light add-item" onclick="handleAddToYourLab('${item.id}'); handleToast('add');">Add to basket</button>`
+                        : `<span class="badge bg-danger fs-6 selected w-100">selected !! </span>`
                     }
                 </div>`;
     })
@@ -228,9 +235,10 @@ function handleCategory() {
   let finded = arr.filter((item) => item.category === category);
   console.log(finded);
   render(finded);
-}
+} 
+
 function handleSort() {
-  if (event.target.value === "Default ID") {
+  if (event.target.value === "Ascending") {
     render(datas[0]);
   } else {
     render(datas[0].reverse());
@@ -265,7 +273,6 @@ function handleDarkMode() {
     article.classList.add("bg-dark");
     footerContent.classList.add("text-light");
     footer.classList.add("bg-footer");
-
     flag = 0;
   } else {
     document.body.style.backgroundColor = "white";
@@ -283,7 +290,6 @@ function handleDarkMode() {
     article.classList.remove("bg-dark");
     footerContent.classList.remove("text-light");
     footer.classList.remove("bg-footer");
-
     flag = 1;
   }
 }
