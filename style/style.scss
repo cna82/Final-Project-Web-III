@@ -1,7 +1,31 @@
 @import "fonts.scss";
-@import "colors.scss";
 @import "mixins.scss";
 
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgb(229, 255, 0);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    i{
+        font-size: 37px !important;
+        color: #000000;
+    }
+}
+
+#myBtn:hover {
+    background-color: #ff00d4;
+}
 
 .btn-green {
     background-color: #8BC34A !important;
@@ -39,10 +63,12 @@ html {
 header {
     height: 20vh;
     width: 100% !important;
+
     nav {
         #basket {
             border-radius: .8rem !important;
             transition: all .6s;
+
             &:hover {
                 background-color: white;
                 box-shadow: 0 0 6px 5px orange;
@@ -79,6 +105,7 @@ article {
 #intro-text {
     font-size: 1.2rem !important;
     font-weight: bold;
+
     #sina-shop {
         color: blue;
     }

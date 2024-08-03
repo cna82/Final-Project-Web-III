@@ -59,17 +59,47 @@ function swipper(list) {
     price3Swipper.innerHTML = `Price : <span class="text-info">${list[2].price}</span> $`;
   }
 }
-// dom nodes seletion
+
+// btn for scroll up
+// Get the button
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+// dom nodes seletion and variables
 let productList = document.getElementById("product-list");
 let yourLab = document.querySelector(".your-lab");
-let footer = document.querySelector("footer");
+let footer = document.querySelector("#footer");
 let counter = 0;
 let article = document.querySelector("article");
 let advantages = document.querySelector("#advantages");
 let sliderMain = document.getElementById("slider-main");
 let search = document.querySelector(".search");
 let icon = document.getElementById("icon");
-let flag = 0;
+let nav = document.querySelector("nav");
+let navItemA = document.querySelectorAll(".nav-item>a");
+let header = document.querySelector("header");
+let introText = document.getElementById("intro-text");
+let sinaShop = document.getElementById("sina-shop");
+let footerContent = document.querySelector(".content1");
+let flag = 1;
 // functions
 const render = (list) => {
   footer.classList.remove("d-none");
@@ -134,21 +164,7 @@ const render = (list) => {
   productList.innerHTML = section;
   yourLab.textContent = YOURLAB.length;
 };
-// let count = 1;
-// let prc = 0;
-// function handlePrice(price) {
-//   debugger;
-//   let value = event.target.textContent;
-//   if (value === "+") {
-//     count++;
-//     prc += +price * +count;
-//     renderYourLab();
-//   } else {
-//     count--;
-//     prc += +price * +count;
-//     renderYourLab();
-//   }
-// }
+
 function renderYourLab() {
   footer.classList.add("d-none");
   sliderMain.classList.add("d-none");
@@ -168,10 +184,8 @@ function renderYourLab() {
                       <h6>Title : ${item.title}</h6>
                       <h6>Category : ${item.category}</h6>
                       <div>
-                      <button onclick="handlePrice(${item.price})" class=' btn btn-danger'>+</button>
-                      <button onclick="handlePrice(${item.price})" class=' btn btn-danger'>-</button>
                       </div>
-                      <span class="badge bg-info">${item.price}$</span>
+                      <span class="badge fs-5 bg-info">${item.price}$</span>
                       <button onclick="handleRemove(${item.id})" class='remove btn btn-lg btn-danger'>Remove from basket </button>
                   </div>
               `;
@@ -220,11 +234,7 @@ function handleSort() {
     render(datas[0].reverse());
   }
 }
-let nav = document.querySelector("nav");
-let navItemA = document.querySelectorAll(".nav-item>a");
-let header = document.querySelector("header");
-let introText = document.getElementById("intro-text");
-let sinaShop = document.getElementById("sina-shop");
+
 function handleDarkMode() {
   localStorage.setItem("theme", flag);
   if (flag) {
@@ -241,6 +251,7 @@ function handleDarkMode() {
       a.classList.add("text-light");
     }
     article.classList.add("bg-dark");
+    footerContent.classList.add("text-light");
     flag = 0;
   } else {
     document.body.style.backgroundColor = "white";
@@ -256,11 +267,8 @@ function handleDarkMode() {
       a.classList.remove("text-light");
     }
     article.classList.remove("bg-dark");
+    footerContent.classList.remove("text-light");
+
     flag = 1;
   }
 }
-
-// // events
-// window.addEventListener("load", () => {
-//   render(BOOKS);
-// });
