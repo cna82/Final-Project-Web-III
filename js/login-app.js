@@ -26,17 +26,16 @@ handleValidationFnamePersian = (event) => {
   const pattern = /[ پچجحخهعغفقثصضشسیبلاتنمکگوئدذرزطظژؤإأءًٌٍَُِّ\s]+$/;
   const isValid = pattern.test(value);
   if (value.length === 0) {
-    fNamePText.textContent = "نام و نام خانوادگی به فارسی نمیتواند خالی باشد";
+    fNamePText.textContent = "Full name persian can't be empty";
     fNamePersian.classList.remove("success");
     fNamePersian.classList.add("error");
-    
   }
   if (isValid) {
     fNamePText.textContent = "";
     fNamePersian.classList.remove("error");
     fNamePersian.classList.add("success");
   } else if (value.length >= 1) {
-    fNamePText.textContent = "لطفا کیبرد را فارسی کنید";
+    fNamePText.textContent = "Please switch keyboard to persian";
     fNamePersian.classList.remove("success");
     fNamePersian.classList.add("error");
   }
@@ -46,7 +45,7 @@ handleValidationFnameEnglish = (event) => {
   const pattern = /^[a-z A-Z]+$/;
   const isValid = pattern.test(value);
   if (value.length === 0) {
-    fNameEText.textContent = "نام و نام خانوادگی به انگلیسی نمیتواند خالی باشد";
+    fNameEText.textContent = `Full name English can't be empty`;
     fNameEnglish.classList.remove("success");
     fNameEnglish.classList.add("error");
   }
@@ -55,7 +54,7 @@ handleValidationFnameEnglish = (event) => {
     fNameEnglish.classList.remove("error");
     fNameEnglish.classList.add("success");
   } else if (value.length >= 1) {
-    fNameEText.textContent = "لطفا کیبرد را انگلیسی کنید";
+    fNameEText.textContent = "Please switch keyboard to Enlish";
     fNameEnglish.classList.remove("success");
     fNameEnglish.classList.add("error");
   }
@@ -65,7 +64,7 @@ handleValidationEmail = (event) => {
   const pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const isValid = pattern.test(value);
   if (value.length === 0) {
-    gmailText.textContent = "وارد کردن ایمیل الزامی است";
+    gmailText.textContent = "Fill this field";
     emalAddress.classList.remove("success");
     emalAddress.classList.add("error");
   }
@@ -74,7 +73,7 @@ handleValidationEmail = (event) => {
     emalAddress.classList.remove("error");
     emalAddress.classList.add("success");
   } else if (value.length >= 1) {
-    gmailText.textContent = "لطفا آدرس ایمیل درست وارد فرمایید";
+    gmailText.textContent = "Please write currect email address";
     emalAddress.classList.remove("success");
     emalAddress.classList.add("error");
   }
@@ -85,7 +84,7 @@ handleValidationPassword = (event) => {
     /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
   const isValid = pattern.test(value);
   if (value.length === 0) {
-    passwordText.textContent = "وارد کردن رمز عبور الزامی است";
+    passwordText.textContent = "Pass can't be empty";
     password.classList.remove("success");
     password.classList.add("error");
   }
@@ -95,7 +94,7 @@ handleValidationPassword = (event) => {
     password.classList.add("success");
   } else if (value.length >= 1) {
     passwordText.textContent =
-      " رمز عبور باید به طول 8 و  شامل حداقل یک حرف انگلیسی بزرگ ، یک عدد و یک کارکتر خاص باشد";
+      "Password must be 8 chars, contain An uppercase and lowercase letter and a special char (@*/- etc)";
     password.classList.remove("success");
     password.classList.add("error");
   }
@@ -111,8 +110,8 @@ setActiveStep = (currentStep) => {
   divs.forEach((element, index) => {
     let result =
       index < currentStep
-        ? element.classList.add("active")
-        : element.classList.remove("active");
+        ? element.classList.add("current")
+        : element.classList.remove("current");
     return result;
   });
 };
@@ -132,13 +131,12 @@ showNext = () => {
   harchi2.classList.remove("d-none");
   debugger;
   if (CURRENT_STEP === 1) {
-    btnNext2.textContent = "وارد شوید";
+    btnNext2.textContent = "Log in !";
   }
 };
 showPrev = () => {
   harchi.classList.remove("d-none");
   harchi2.classList.add("d-none");
 };
-
 
 // events

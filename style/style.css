@@ -24,14 +24,14 @@
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  transition: all 1s;
+}
+#myBtn:hover {
+  background-color: #ff00d4;
 }
 #myBtn i {
   font-size: 37px !important;
   color: #000000;
-}
-
-#myBtn:hover {
-  background-color: #ff00d4;
 }
 
 .btn-green {
@@ -67,6 +67,13 @@ html {
 header {
   height: 20vh;
   width: 100% !important;
+}
+header .nav-item a {
+  border-radius: 10px;
+  transition: all 0.6s;
+}
+header .nav-item a:hover {
+  box-shadow: 0 0 6px 5px orange !important;
 }
 header nav #basket {
   border-radius: 0.8rem !important;

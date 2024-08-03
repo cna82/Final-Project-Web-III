@@ -5,9 +5,11 @@ footer {
     font-family: tahoma;
     font-size: 16px;
 }
-.bg-footer{
+
+.bg-footer {
     background-color: #585858;
 }
+
 footer .links {
     border-bottom: 1px solid #ff2929;
 }
