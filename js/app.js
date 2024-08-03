@@ -235,7 +235,7 @@ function handleCategory() {
   let finded = arr.filter((item) => item.category === category);
   console.log(finded);
   render(finded);
-} 
+}
 
 function handleSort() {
   if (event.target.value === "Ascending") {
@@ -243,6 +243,7 @@ function handleSort() {
   } else {
     render(datas[0].reverse());
   }
+
 }
 let handleToast = (state) => {
   Toastify({
