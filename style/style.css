@@ -1,0 +1,212 @@
+@import url("https://fonts.cdnfonts.com/css/iranyekan");
+@font-face {
+  font-family: vazir;
+  src: url(../fonts/webfonts/Vazirmatn-Black.woff2) format("woff2");
+}
+@font-face {
+  font-family: vazir-bold;
+  src: url(../fonts/webfonts/Vazirmatn-Bold.woff2) format("woff2");
+  font-weight: bold;
+}
+.btn-green {
+  background-color: #8BC34A !important;
+}
+
+.rounded-img {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.rounded-form {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.mg-r {
+  margin-left: -15px !important;
+  padding: 1rem !important;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  height: 20vh;
+  width: 100% !important;
+}
+header nav #basket {
+  border-radius: 0.8rem !important;
+  transition: all 0.6s;
+}
+header nav #basket:hover {
+  background-color: white;
+  box-shadow: 0 0 6px 5px orange;
+}
+
+article {
+  height: 80vh;
+  background-color: white !important;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem !important;
+}
+article #nike-img {
+  width: 100% !important;
+  height: 80% !important;
+}
+
+#advantages {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+#advantages img {
+  height: 315px !important;
+}
+
+#intro-text {
+  font-size: 1.2rem !important;
+  font-weight: bold;
+}
+#intro-text #sina-shop {
+  color: blue;
+}
+
+.swipper-flex {
+  padding: 1.8rem;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+#slider-main {
+  margin-top: 5rem !important;
+  width: 100%;
+  height: auto;
+  background-image: url("../images/back-ground/jordan2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+#slider-main .blur-swipper {
+  backdrop-filter: blur(25px) !important;
+}
+
+.swiper {
+  width: 100%;
+  height: 100vh;
+  padding: 3rem !important;
+}
+
+.img-swipper {
+  height: 400px !important;
+  width: 300px !important;
+}
+
+.search {
+  background-color: #ddd !important;
+  padding: 1rem !important;
+}
+
+#product-list {
+  padding: 1.3rem;
+  background-color: #ddd;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  position: relative;
+}
+#product-list .ctg {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgb(255, 201, 201);
+  gap: 1rem !important;
+  padding: 1rem;
+  position: sticky;
+  left: 4%;
+  top: 12%;
+  border: 1px solid #504f4f;
+  border-radius: 25px;
+  width: 15% !important;
+  height: 80vh !important;
+}
+#product-list .ctg img {
+  border-radius: 25px !important;
+}
+#product-list .genders button {
+  transition: all 0.7s;
+}
+#product-list .products {
+  padding-left: 8rem !important;
+  width: 85% !important;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(auto-fill, 17rem);
+  gap: 4rem;
+}
+#product-list .products .dsc {
+  width: 200px !important;
+  overflow: hidden !important;
+}
+#product-list .products .product {
+  background-color: white;
+  flex-basis: 18%;
+  padding: 1rem;
+  border: 1px solid gray;
+  border-radius: 20px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+#product-list .products .product img {
+  width: 100%;
+  border-radius: 20px;
+  height: 41vh;
+}
+#product-list .products .add-item {
+  padding: 5px !important;
+}
+#product-list .products .selected {
+  padding: 1rem !important;
+}
+#product-list .my-product {
+  width: 100% !important;
+}
+
+.your-lab-items .basket {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100% !important;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+}
+.your-lab-items .basket img {
+  height: 100px;
+  width: 100px;
+  transition: all 1s;
+}
+.your-lab-items .basket img:hover {
+  box-shadow: 0px 0px 5px 4px yellow;
+}
+
+/*# sourceMappingURL=style.css.map */
