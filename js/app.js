@@ -3,7 +3,9 @@
 const swiper = new Swiper(".swiper", {
   direction: "horizontal",
   loop: true,
-
+  autoplay: {
+    delay: 1800,
+  },
   // If we need pagination
   pagination: {
     el: ".swiper-pagination",
@@ -153,7 +155,7 @@ const render = (list) => {
                 
                     ${
                       !YOURLAB.find((yourLabItem) => yourLabItem.id === item.id)
-                        ? `<button class="btn btn-lg btn-green text-light add-item" onclick="handleAddToYourLab('${item.id}')">Add to basket</button>`
+                        ? `<button class="btn btn-lg btn-green text-light add-item" onclick="handleAddToYourLab('${item.id}'); handleToast('add');">Add to basket</button>`
                         : `<span class="badge bg-danger selected">This item has already been selected !! </span>`
                     }
                 </div>`;
@@ -186,7 +188,7 @@ function renderYourLab() {
                       <div>
                       </div>
                       <span class="badge fs-5 bg-info">${item.price}$</span>
-                      <button onclick="handleRemove(${item.id})" class='remove btn btn-lg btn-danger'>Remove from basket </button>
+                      <button onclick="handleRemove(${item.id}); handleToast('remove')" class='remove btn btn-lg btn-danger'>Remove from basket </button>
                   </div>
               `;
   }).join("");
@@ -234,7 +236,17 @@ function handleSort() {
     render(datas[0].reverse());
   }
 }
-
+let handleToast = (state) => {
+  Toastify({
+    text:
+      state === "add" ? "Item added successfully" : "Item removed successfully",
+    position: "center",
+    gravity: "top",
+    style: {
+      background: state === "add" ? "green" : "red",
+    },
+  }).showToast();
+};
 function handleDarkMode() {
   localStorage.setItem("theme", flag);
   if (flag) {
@@ -252,6 +264,8 @@ function handleDarkMode() {
     }
     article.classList.add("bg-dark");
     footerContent.classList.add("text-light");
+    footer.classList.add("bg-footer");
+
     flag = 0;
   } else {
     document.body.style.backgroundColor = "white";
@@ -268,6 +282,7 @@ function handleDarkMode() {
     }
     article.classList.remove("bg-dark");
     footerContent.classList.remove("text-light");
+    footer.classList.remove("bg-footer");
 
     flag = 1;
   }
