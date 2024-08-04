@@ -40,8 +40,8 @@ html {
     margin-top: -5rem !important;
   }
   .img-swipper {
-    height: 100px !important;
-    width: 100px !important;
+    height: 100px;
+    width: 100px;
     border-radius: 1.5rem;
     box-shadow: 0px 0px 7px 9px rgb(102, 125, 253);
   }
@@ -162,8 +162,8 @@ html {
     margin-top: -5rem !important;
   }
   .img-swipper {
-    height: 19rem !important;
-    width: 19rem !important;
+    height: 19rem;
+    width: 19rem;
     border-radius: 1.5rem;
     box-shadow: 0px 0px 7px 9px rgb(102, 125, 253);
   }
@@ -283,8 +283,8 @@ html {
     margin-top: -5rem !important;
   }
   .img-swipper {
-    height: 19rem !important;
-    width: 19rem !important;
+    height: 8rem;
+    width: 8rem;
     border-radius: 1.5rem;
     box-shadow: 0px 0px 7px 9px rgb(102, 125, 253);
   }
@@ -398,8 +398,8 @@ html {
     height: 315px !important;
   }
   .img-swipper {
-    height: 400px !important;
-    width: 300px !important;
+    height: 400px;
+    width: 300px;
   }
   .my-form {
     width: 50% !important;

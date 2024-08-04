@@ -16,11 +16,6 @@ const swiper = new Swiper(".swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-
-  // And if we need scrollbar
-  // scrollbar: {
-  //   el: ".swiper-scrollbar",
-  // },
 });
 
 // swipper slider dom nodes
@@ -42,7 +37,7 @@ let price3Swipper = document.getElementById("category3-swipper");
 let slider = document.getElementById("slider");
 
 // swipper function
-function swipper(list) {
+const swipper = (list) => {
   for (let i = 0; i < list.length; i++) {
     img1Swipper.setAttribute("src", list[0].image);
     title1Swipper.innerHTML = list[0].title;
@@ -60,30 +55,30 @@ function swipper(list) {
     category3Swipper.innerHTML = list[2].category;
     price3Swipper.innerHTML = `Price : <span class="text-info">${list[2].price}</span> $`;
   }
-}
+};
 
 // btn for scroll up
 // Get the button
 let mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () {
+window.onscroll = () => {
   scrollFunction();
 };
 
-function scrollFunction() {
+const scrollFunction = () => {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
   }
-}
+};
 
 // When the user clicks on the button, scroll to the top of the document
-function topFunction() {
+const topFunction = () => {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-}
+};
 
 // dom nodes seletion and variables
 let productList = document.getElementById("product-list");
@@ -101,7 +96,7 @@ let header = document.querySelector("header");
 let introText = document.getElementById("intro-text");
 let sinaShop = document.getElementById("sina-shop");
 let footerContent = document.querySelector(".content1");
-let flag = 1;
+let flag = true;
 // functions
 const render = (list) => {
   footer.classList.remove("d-none");
@@ -174,7 +169,7 @@ const render = (list) => {
   yourLab.textContent = YOURLAB.length;
 };
 
-function renderYourLab() {
+const renderYourLab = () => {
   footer.classList.add("d-none");
   sliderMain.classList.add("d-none");
   article.classList.add("d-none");
@@ -204,7 +199,7 @@ function renderYourLab() {
   </section>`;
   productList.innerHTML = section;
   yourLab.textContent = YOURLAB.length;
-}
+};
 
 const handleSearch = (event) => {
   let value = event.target.value;
@@ -227,7 +222,7 @@ const handleBackToMenu = () => {
   render(datas[0]);
 };
 
-function handleCategory() {
+const handleCategory = () => {
   console.log(datas[0]);
   let arr = datas[0];
   let category = event.target.getAttribute("id");
@@ -235,17 +230,16 @@ function handleCategory() {
   let finded = arr.filter((item) => item.category === category);
   console.log(finded);
   render(finded);
-}
+};
 
-function handleSort() {
+const handleSort = () => {
   if (event.target.value === "Ascending") {
     render(datas[0]);
   } else {
     render(datas[0].reverse());
   }
-
-}
-let handleToast = (state) => {
+};
+const handleToast = (state) => {
   Toastify({
     text:
       state === "add" ? "Item added successfully" : "Item removed successfully",
@@ -256,7 +250,8 @@ let handleToast = (state) => {
     },
   }).showToast();
 };
-function handleDarkMode() {
+// persist theme with local storage
+const handleDarkMode = () => {
   localStorage.setItem("theme", flag);
   if (flag) {
     document.body.style.backgroundColor = "black";
@@ -274,7 +269,7 @@ function handleDarkMode() {
     article.classList.add("bg-dark");
     footerContent.classList.add("text-light");
     footer.classList.add("bg-footer");
-    flag = 0;
+    flag = false;
   } else {
     document.body.style.backgroundColor = "white";
     header.classList.remove("bg-dark");
@@ -291,6 +286,6 @@ function handleDarkMode() {
     article.classList.remove("bg-dark");
     footerContent.classList.remove("text-light");
     footer.classList.remove("bg-footer");
-    flag = 1;
+    flag = true;
   }
-}
+};

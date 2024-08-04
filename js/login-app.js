@@ -21,7 +21,7 @@ let harchi = document.getElementById("harchi");
 let harchi2 = document.getElementById("harchi2");
 
 // functions
-handleValidationFnamePersian = (event) => {
+const handleValidationFnamePersian = (event) => {
   let value = event.target.value;
   const pattern = /[ پچجحخهعغفقثصضشسیبلاتنمکگوئدذرزطظژؤإأءًٌٍَُِّ\s]+$/;
   const isValid = pattern.test(value);
@@ -40,7 +40,7 @@ handleValidationFnamePersian = (event) => {
     fNamePersian.classList.add("error");
   }
 };
-handleValidationFnameEnglish = (event) => {
+const handleValidationFnameEnglish = (event) => {
   let value = event.target.value;
   const pattern = /^[a-z A-Z]+$/;
   const isValid = pattern.test(value);
@@ -59,7 +59,7 @@ handleValidationFnameEnglish = (event) => {
     fNameEnglish.classList.add("error");
   }
 };
-handleValidationEmail = (event) => {
+const handleValidationEmail = (event) => {
   let value = event.target.value;
   const pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const isValid = pattern.test(value);
@@ -78,7 +78,7 @@ handleValidationEmail = (event) => {
     emalAddress.classList.add("error");
   }
 };
-handleValidationPassword = (event) => {
+const handleValidationPassword = (event) => {
   let value = event.target.value;
   const pattern =
     /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
@@ -99,14 +99,14 @@ handleValidationPassword = (event) => {
     password.classList.add("error");
   }
 };
-handlePasswordVisibilty = () => {
+const handlePasswordVisibilty = () => {
   let comparisoned =
     password.type === "password"
       ? (password.type = "text")
       : (password.type = "password");
   return comparisoned;
 };
-setActiveStep = (currentStep) => {
+const setActiveStep = (currentStep) => {
   divs.forEach((element, index) => {
     let result =
       index < currentStep
@@ -116,17 +116,17 @@ setActiveStep = (currentStep) => {
   });
 };
 
-handleNext = () => {
+const handleNext = () => {
   CURRENT_STEP++;
   setActiveStep(CURRENT_STEP);
   showNext();
 };
-handlePrev = () => {
+const handlePrev = () => {
   CURRENT_STEP--;
   setActiveStep(CURRENT_STEP);
   showPrev();
 };
-showNext = () => {
+const showNext = () => {
   harchi.classList.add("d-none");
   harchi2.classList.remove("d-none");
   debugger;
@@ -134,7 +134,7 @@ showNext = () => {
     btnNext2.textContent = "Log in !";
   }
 };
-showPrev = () => {
+const showPrev = () => {
   harchi.classList.remove("d-none");
   harchi2.classList.add("d-none");
 };
