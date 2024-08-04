@@ -4,7 +4,7 @@ const swiper = new Swiper(".swiper", {
   direction: "horizontal",
   loop: true,
   autoplay: {
-    delay: 1800,
+    delay: 2000,
   },
   // If we need pagination
   pagination: {
@@ -112,9 +112,9 @@ const render = (list) => {
 
   let section = `
   <div class="ctg">
-  <h2>Products</h2>
+  <h1 class="product-title">PRODUCTS</h1>
     <div class="btn-group w-100"  role="group">
-    <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
       category
     </button>
     <ul class="dropdown-menu">
@@ -127,7 +127,7 @@ const render = (list) => {
   </div>
   <div class="w-100"><hr></div>
   <div class="btn-group w-100"  role="group">
-    <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
       Sort By
     </button>
     <ul class="dropdown-menu">
@@ -135,7 +135,7 @@ const render = (list) => {
     <li><a class="dropdown-item" href="#product-list" onclick="handleSort()">Descending</a></li>
     </ul>
   </div>
-  <div class="w-100"><hr></div>
+  <div class="w-100 hr"><hr></div>
 <div>
 <img src="../images/vertical nav/hordan.png" alt="jordan !!!"  width="165px" height="180px">
 
@@ -162,7 +162,7 @@ const render = (list) => {
                     </br>
                     ${
                       !YOURLAB.find((yourLabItem) => yourLabItem.id === item.id)
-                        ? `<button class="btn btn-lg btn-primary text-light add-item" onclick="handleAddToYourLab('${item.id}'); handleToast('add');">Add to basket</button>`
+                        ? `<button class="btn btn-lg btn-primary text-light add-item w-100" onclick="handleAddToYourLab('${item.id}'); handleToast('add');">Add to basket</button>`
                         : `<span class="badge bg-danger fs-6 selected w-100">selected !! </span>`
                     }
                 </div>`;
@@ -194,8 +194,8 @@ function renderYourLab() {
                       <h6>Category : ${item.category}</h6>
                       <div>
                       </div>
-                      <span class="badge fs-5 bg-info">${item.price}$</span>
-                      <button onclick="handleRemove(${item.id}); handleToast('remove')" class='remove btn btn-lg btn-danger'>Remove from basket </button>
+                      <a class="btn  bg-info disabled">${item.price}$</a>
+                      <button onclick="handleRemove(${item.id}); handleToast('remove')" class='remove btn  btn-outline-danger'>Remove from basket </button>
                   </div>
               `;
   }).join("");

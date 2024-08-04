@@ -1,6 +1,485 @@
 @import "fonts.scss";
 @import "mixins.scss";
 
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    color: #660202;
+    background-color: #f794d6;
+}
+
+@media screen and (max-width: 576px) {
+    header {
+        nav {
+            background-color: white;
+        }
+    }
+
+    article {
+        overflow: hidden;
+
+        #nike-img {
+            display: none;
+        }
+
+        #nike-img-phone {
+            display: block;
+            width: 100%;
+            margin-top: -5rem !important;
+        }
+    }
+
+    .img-swipper {
+        height: 100px !important;
+        width: 100px !important;
+        border-radius: 1.5rem;
+        box-shadow: 0px 0px 7px 9px rgb(102, 125, 253);
+    }
+
+    .swipper-flex {
+        flex-direction: column;
+    }
+
+    #product-list {
+        padding: 1.3rem;
+        background-color: #ddd;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        .ctg {
+            @include d-flex(row, wrap, center, center);
+            background-color: #abc1ca;
+            gap: .5rem !important;
+            padding: 1rem;
+            border-radius: 8px;
+            width: 100% !important;
+            height: auto !important;
+
+            img {
+
+                display: none;
+            }
+
+            .hr {
+                display: none;
+            }
+
+            .product-title {
+                font-family: cursive !important;
+                font-weight: bold;
+                letter-spacing: 13px;
+                text-shadow: 3px 3px 5px rgb(255, 255, 255);
+            }
+
+            ul {
+                width: 100%;
+
+                li {
+                    width: 100%;
+
+                    a {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .genders {
+            button {
+                transition: all .7s;
+            }
+        }
+
+        .products {
+            margin-top: 3rem !important;
+            width: 100% !important;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            grid-template-columns: repeat(auto-fill, 17rem);
+            gap: 4rem;
+
+            .dsc {
+                width: 200px !important;
+                overflow: hidden !important;
+            }
+
+            .product {
+                background-color: white;
+                flex-basis: 18%;
+                padding: 1rem;
+                border: 1px solid gray;
+                border-radius: 20px;
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                align-content: space-between;
+                gap: 0.5rem;
+
+                img {
+                    width: 70%;
+                    border-radius: 20px;
+                    height: 22vh;
+                    display: block;
+                    margin: auto;
+
+                }
+            }
+
+            .add-item {
+                padding: 5px !important;
+            }
+
+            .selected {
+                padding: 1rem !important;
+            }
+
+
+        }
+
+        .my-product {
+            width: 100% !important;
+        }
+
+    }
+
+    .your-lab-items {
+
+        .basket {
+            width: 100% !important;
+            background-color: white;
+
+            img {
+                height: 100px;
+                width: 100px;
+
+                transition: all 1s;
+
+                &:hover {
+                    box-shadow: 0px 0px 5px 4px yellow;
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 768px) {
+    header {
+        nav {
+            background-color: white;
+        }
+    }
+
+    article {
+        overflow: hidden;
+
+        #nike-img {
+            display: none;
+        }
+
+        #nike-img-phone {
+            display: block;
+            width: 100%;
+            margin-top: -5rem !important;
+        }
+    }
+
+    .img-swipper {
+        height: 100px !important;
+        width: 100px !important;
+        border-radius: 1.5rem;
+        box-shadow: 0px 0px 7px 9px rgb(102, 125, 253);
+    }
+
+    .swipper-flex {
+        flex-direction: column;
+    }
+
+    #product-list {
+        padding: 1.3rem;
+        background-color: #ddd;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        .ctg {
+            @include d-flex(row, wrap, center, center);
+            background-color: #abc1ca;
+            gap: .5rem !important;
+            padding: 1rem;
+            border-radius: 8px;
+            width: 100% !important;
+            height: auto !important;
+
+            img {
+
+                display: none;
+            }
+
+            .hr {
+                display: none;
+            }
+
+            .product-title {
+                font-family: cursive !important;
+                font-weight: bold;
+                letter-spacing: 13px;
+                text-shadow: 3px 3px 5px rgb(255, 255, 255);
+            }
+
+            ul {
+                width: 100%;
+
+                li {
+                    width: 100%;
+
+                    a {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .genders {
+            button {
+                transition: all .7s;
+            }
+        }
+
+        .products {
+            margin-top: 3rem !important;
+            width: 100% !important;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            grid-template-columns: repeat(auto-fill, 17rem);
+            gap: 4rem;
+
+            .dsc {
+                width: 200px !important;
+                overflow: hidden !important;
+            }
+
+            .product {
+                background-color: white;
+                flex-basis: 18%;
+                padding: 1rem;
+                border: 1px solid gray;
+                border-radius: 20px;
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                align-content: space-between;
+                gap: 0.5rem;
+
+                img {
+                    width: 70%;
+                    border-radius: 20px;
+                    height: 22vh;
+                    display: block;
+                    margin: auto;
+
+                }
+            }
+
+            .add-item {
+                padding: 5px !important;
+            }
+
+            .selected {
+                padding: 1rem !important;
+            }
+
+
+        }
+
+        .my-product {
+            width: 100% !important;
+        }
+
+    }
+
+    .your-lab-items {
+
+        .basket {
+            width: 100% !important;
+            background-color: white;
+
+            img {
+                height: 100px;
+                width: 100px;
+
+                transition: all 1s;
+
+                &:hover {
+                    box-shadow: 0px 0px 5px 4px yellow;
+                }
+            }
+        }
+    }
+
+
+}
+
+
+@media screen and (max-width: 992px) {}
+
+@media screen and (min-width: 993px) {
+    #nike-img {
+        width: 100%;
+    }
+
+    #nike-img-phone {
+        display: none;
+    }
+
+    #advantages {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+
+        img {
+            height: 315px !important;
+        }
+    }
+
+    .img-swipper {
+        height: 400px !important;
+        width: 300px !important;
+    }
+
+    .my-form {
+        width: 50% !important;
+    }
+
+    #product-list {
+        padding: 1.3rem;
+        background-color: #ddd;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        position: relative;
+
+        .ctg {
+            @include d-flex(column, wrap, flex-start, center);
+            background-color: rgb(255, 201, 201);
+            gap: 1rem !important;
+            padding: 1rem;
+            position: sticky;
+            left: 4%;
+            top: 12%;
+            border: 1px solid #504f4f;
+            border-radius: 25px;
+            width: 15% !important;
+            height: 80vh !important;
+
+            img {
+                border-radius: 25px !important;
+            }
+
+            ;
+        }
+
+        .genders {
+            button {
+                transition: all .7s;
+            }
+        }
+
+        .products {
+            padding-left: 8rem !important;
+            width: 85% !important;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            grid-template-columns: repeat(auto-fill, 17rem);
+            gap: 4rem;
+
+            .dsc {
+                width: 200px !important;
+                overflow: hidden !important;
+            }
+
+            .product {
+                background-color: white;
+                flex-basis: 18%;
+                padding: 1rem;
+                border: 1px solid gray;
+                border-radius: 20px;
+                // @include d-flex(column, wrap, flex-start, center);
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                align-content: space-between;
+                gap: 0.5rem;
+
+                img {
+                    width: 70%;
+                    border-radius: 20px;
+                    height: 22vh;
+                    display: block;
+                    margin: auto;
+
+                }
+            }
+
+            .add-item {
+                padding: 5px !important;
+            }
+
+            .selected {
+                padding: 1rem !important;
+            }
+
+
+        }
+
+        .my-product {
+            width: 100% !important;
+        }
+
+    }
+
+    .your-lab-items {
+
+        .basket {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            width: 100% !important;
+            justify-content: space-around;
+            align-items: center;
+            background-color: white;
+
+            img {
+                height: 100px;
+                width: 100px;
+
+                transition: all 1s;
+
+                &:hover {
+                    box-shadow: 0px 0px 5px 4px yellow;
+                }
+            }
+        }
+    }
+
+}
+
 #myBtn {
     display: none;
     position: fixed;
@@ -51,17 +530,6 @@
 
 }
 
-* {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 header {
     height: 20vh;
     width: 100% !important;
@@ -95,29 +563,12 @@ article {
     background-color: white !important;
     @include d-flex(column, wrap, center, center);
     gap: 2rem !important;
-
-    #nike-img {
-        width: 100% !important;
-        height: 80% !important;
-    }
-
 }
-
-#advantages {
-    width: 100%;
-    // height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-
-    img {
-        height: 315px !important;
-    }
-}
-
 
 #intro-text {
     font-size: 1.2rem !important;
     font-weight: bold;
+    padding: 5px;
 
     #sina-shop {
         color: blue;
@@ -153,125 +604,8 @@ article {
     padding: 3rem !important;
 }
 
-.img-swipper {
-    height: 400px !important;
-    width: 300px !important;
-}
 
 .search {
     background-color: #ddd !important;
     padding: 1rem !important;
-}
-
-#product-list {
-    padding: 1.3rem;
-    background-color: #ddd;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    display: flex;
-    position: relative;
-
-    .ctg {
-        @include d-flex(column, wrap, flex-start, center);
-        background-color: rgb(255, 201, 201);
-        gap: 1rem !important;
-        padding: 1rem;
-        position: sticky;
-        left: 4%;
-        top: 12%;
-        border: 1px solid #504f4f;
-        border-radius: 25px;
-        width: 15% !important;
-        height: 80vh !important;
-
-        img {
-            border-radius: 25px !important;
-        }
-
-        ;
-    }
-
-    .genders {
-        button {
-            transition: all .7s;
-        }
-    }
-
-    .products {
-        padding-left: 8rem !important;
-        width: 85% !important;
-        display: grid;
-        justify-content: center;
-        align-content: center;
-        grid-template-columns: repeat(auto-fill, 17rem);
-        gap: 4rem;
-
-        .dsc {
-            width: 200px !important;
-            overflow: hidden !important;
-        }
-
-        .product {
-            background-color: white;
-            flex-basis: 18%;
-            padding: 1rem;
-            border: 1px solid gray;
-            border-radius: 20px;
-            // @include d-flex(column, wrap, flex-start, center);
-            display: grid;
-            justify-content: center;
-            align-items: center;
-            align-content:space-between;
-            gap: 0.5rem;
-
-            img {
-                width: 70%;
-                border-radius: 20px;
-                height: 22vh;
-                display: block;
-                margin: auto;
-
-            }
-        }
-
-        .add-item {
-            padding: 5px !important;
-        }
-
-        .selected {
-            padding: 1rem !important;
-        }
-
-
-    }
-
-    .my-product {
-        width: 100% !important;
-    }
-
-}
-
-.your-lab-items {
-
-    .basket {
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
-        width: 100% !important;
-        justify-content: space-around;
-        align-items: center;
-        background-color: white;
-
-        img {
-            height: 100px;
-            width: 100px;
-
-            transition: all 1s;
-
-            &:hover {
-                box-shadow: 0px 0px 5px 4px yellow;
-            }
-        }
-    }
 }
