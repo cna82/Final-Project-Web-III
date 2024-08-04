@@ -310,7 +310,7 @@ html {
     top: 12%;
     border: 1px solid #504f4f;
     border-radius: 25px;
-    width: 15% !important;
+    width: 18% !important;
     height: 80vh !important;
   }
   #product-list .ctg img {
@@ -450,7 +450,7 @@ article {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem !important;
+  gap: 0.5rem !important;
 }
 
 #intro-text {

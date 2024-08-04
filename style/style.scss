@@ -384,7 +384,7 @@ html {
             top: 12%;
             border: 1px solid #504f4f;
             border-radius: 25px;
-            width: 15% !important;
+            width: 18% !important;
             height: 80vh !important;
 
             img {
@@ -451,7 +451,7 @@ html {
         .my-product {
             width: 100% !important;
         }
-
+       
     }
 
     .your-lab-items {
@@ -562,7 +562,7 @@ article {
     height: 80vh;
     background-color: white !important;
     @include d-flex(column, wrap, center, center);
-    gap: 2rem !important;
+    gap: .5rem !important;
 }
 
 #intro-text {
