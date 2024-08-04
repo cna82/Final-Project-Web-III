@@ -112,7 +112,7 @@ const render = (list) => {
 
   let section = `
   <div class="ctg">
-  <h1 class="product-title">PRODUCTS</h1>
+  <h3 class="product-title">PRODUCTS</h3>
     <div class="btn-group w-100"  role="group">
     <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
       category
@@ -137,7 +137,7 @@ const render = (list) => {
   </div>
   <div class="w-100 hr"><hr></div>
 <div>
-<img src="../images/vertical nav/hordan.png" alt="jordan !!!"  width="165px" height="180px">
+<img src="../images/vertical nav/hordan.png" alt="jordan !!!"  width="150px" height="180px">
 
 </div>
  </div>

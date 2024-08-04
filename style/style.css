@@ -157,12 +157,13 @@ html {
   }
   article #nike-img-phone {
     display: block;
-    width: 100%;
+    width: 80%;
+    height: 90%;
     margin-top: -5rem !important;
   }
   .img-swipper {
-    height: 100px !important;
-    width: 100px !important;
+    height: 19rem !important;
+    width: 19rem !important;
     border-radius: 1.5rem;
     box-shadow: 0px 0px 7px 9px rgb(102, 125, 253);
   }
@@ -170,7 +171,7 @@ html {
     flex-direction: column;
   }
   #product-list {
-    padding: 1.3rem;
+    padding: 2.3rem;
     background-color: #ddd;
     width: 100%;
     height: 100%;
@@ -196,9 +197,124 @@ html {
   }
   #product-list .ctg .product-title {
     font-family: cursive !important;
-    font-weight: bold;
     letter-spacing: 13px;
     text-shadow: 3px 3px 5px rgb(255, 255, 255);
+  }
+  #product-list .ctg ul {
+    width: 100%;
+  }
+  #product-list .ctg ul li {
+    width: 100%;
+  }
+  #product-list .ctg ul li a {
+    width: 100%;
+  }
+  #product-list .genders button {
+    transition: all 0.7s;
+  }
+  #product-list .products {
+    margin-top: 3rem !important;
+    width: 100% !important;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(auto-fill, 17rem);
+    gap: 4rem;
+  }
+  #product-list .products .dsc {
+    width: 200px !important;
+    overflow: hidden !important;
+  }
+  #product-list .products .product {
+    background-color: white;
+    flex-basis: 18%;
+    padding: 1rem;
+    border: 1px solid gray;
+    border-radius: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    gap: 0.5rem;
+  }
+  #product-list .products .product img {
+    width: 70%;
+    border-radius: 20px;
+    height: 22vh;
+    display: block;
+    margin: auto;
+  }
+  #product-list .products .add-item {
+    padding: 5px !important;
+  }
+  #product-list .products .selected {
+    padding: 1rem !important;
+  }
+  #product-list .my-product {
+    width: 100% !important;
+  }
+  .your-lab-items .basket {
+    width: 100% !important;
+    background-color: white;
+  }
+  .your-lab-items .basket img {
+    height: 100px;
+    width: 100px;
+    transition: all 1s;
+  }
+  .your-lab-items .basket img:hover {
+    box-shadow: 0px 0px 5px 4px yellow;
+  }
+}
+@media screen and (max-width: 992px) {
+  header nav {
+    background-color: white;
+  }
+  article {
+    overflow: hidden;
+  }
+  article #nike-img {
+    display: none;
+  }
+  article #nike-img-phone {
+    display: block;
+    width: 80%;
+    height: 90%;
+    margin-top: -5rem !important;
+  }
+  .img-swipper {
+    height: 19rem !important;
+    width: 19rem !important;
+    border-radius: 1.5rem;
+    box-shadow: 0px 0px 7px 9px rgb(102, 125, 253);
+  }
+  .swipper-flex {
+    flex-direction: column;
+  }
+  #product-list {
+    padding: 2.3rem;
+    background-color: #ddd;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  #product-list .ctg {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #abc1ca;
+    gap: 0.5rem !important;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100% !important;
+    height: auto !important;
+  }
+  #product-list .ctg img {
+    display: none;
+  }
+  #product-list .ctg .hr {
+    display: none;
   }
   #product-list .ctg ul {
     width: 100%;
@@ -311,7 +427,7 @@ html {
     border: 1px solid #504f4f;
     border-radius: 25px;
     width: 18% !important;
-    height: 80vh !important;
+    height: 85vh !important;
   }
   #product-list .ctg img {
     border-radius: 25px !important;
